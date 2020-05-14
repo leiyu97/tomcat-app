@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!--Properties>
+        <Property name="filename">${catalina.home}/logs/app.log</Property>
+    </Properties-->
+    <Filter type="ThresholdFilter" level="trace"/>
+    <Appenders>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS} [ABC] %-5p  [%c] (%t) %m%n"/>
+        </Console>
+        <!--Appender type="File" name="File" fileName="${filename}">
+            <Layout type="PatternLayout">
+                <Pattern>%d %p %C{1.} [%t] %m%n %X{appName}</Pattern>
+            </Layout>
+        </Appender-->
+    </Appenders>
+    <loggers>
+        <Logger name="test1" level="debug" additivity="false">
+            <Filter type="ThreadContextMapFilter">
+                <KeyValuePair key="appName" value="TomcatLogger"/>
+            </Filter>
+            <AppenderRef ref="STDOUT"/>
+        </Logger>
+
+        <Root level="INFO">
+            <AppenderRef ref="STDOUT"/>
+            <!--AppenderRef ref="File"/-->
+        </Root>
+    </loggers>
+</configuration>

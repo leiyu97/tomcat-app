@@ -13,7 +13,7 @@ public class TomcatLogging extends Thread {
 
     private Logger logger = Logger.getLogger ("TomcatLogging");
 
-    boolean isAlive = true; //set false for now, don't want the logging
+    boolean isAlive = false; //set false for now, don't want the logging
     int count=0;
 
     public void run() {
