@@ -142,7 +142,6 @@
         <subsystem xmlns="urn:jboss:domain:bean-validation:1.0"/>
         <subsystem xmlns="urn:jboss:domain:datasources:5.0">
             <datasources>
-            <datasources>
                 <!-- ##DATASOURCES## -->
                 <datasource jndi-name="java:jboss/PostgresDS" pool-name="PostgresDS">
                     <!--connection-url>jdbc:postgresql://postgres:5432/postgres</connection-url-->
