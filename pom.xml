@@ -111,6 +111,16 @@
             <version>4.0.0-b01</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk15to18</artifactId>
+            <version>1.65</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-ext-jdk15to18</artifactId>
+            <version>1.64</version>
+        </dependency>
 
     </dependencies>
     <build>
@@ -145,7 +155,8 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>com.larinia.client.HelloWorld</mainClass>
+                            <!--mainClass>com.larinia.client.HelloWorld</mainClass-->
+                            <mainClass>com.larinia.client.cryptoLearn</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
