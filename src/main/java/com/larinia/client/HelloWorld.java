@@ -27,5 +27,7 @@ public class HelloWorld implements Runnable {
     @Override
     public void run() {
         System.out.println("HelloWorld.printMessage: Hello World!");
+        System.out.println("HelloWorld.run: check if JAVA_TOOL_OPTIONS has been picked up"+ System.getProperty("javax.net.ssl.keyStorePassword"));
+        System.out.println("HelloWorld.run: all properties " + System.getProperties());
     }
 }
