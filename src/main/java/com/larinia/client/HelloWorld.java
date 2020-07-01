@@ -16,7 +16,9 @@ public class HelloWorld implements Runnable {
             Thread t = new Thread(hw);
 
             try {
-                t.sleep(2000000);
+                //2000000 == 33 mins
+                //change to 3 mins 
+                t.sleep(200000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
