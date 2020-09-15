@@ -1,7 +1,8 @@
 package com.larinia.client;
 
+
 public class HelloWorld implements Runnable {
-    static boolean isActive = true;
+    static boolean isActive = false;
 
     public static void printMessage() {
         while (isActive) {
@@ -28,8 +29,8 @@ public class HelloWorld implements Runnable {
 
     @Override
     public void run() {
-        System.out.println("HelloWorld.printMessage: Hello World!");
-        System.out.println("HelloWorld.run: check if JAVA_TOOL_OPTIONS has been picked up"+ System.getProperty("javax.net.ssl.keyStorePassword"));
-        System.out.println("HelloWorld.run: all properties " + System.getProperties());
+        System.out.println("HelloWorld.printMessage: Hello World! time is "+ System.currentTimeMillis());
+       // System.out.println("HelloWorld.run: check if JAVA_TOOL_OPTIONS has been picked up"+ System.getProperty("javax.net.ssl.keyStorePassword"));
+       // System.out.println("HelloWorld.run: all properties " + System.getProperties());
     }
 }
