@@ -2,7 +2,7 @@ package com.larinia.client;
 
 
 public class HelloWorld implements Runnable {
-    static boolean isActive = false;
+    static boolean isActive = true;
 
     public static void printMessage() {
         while (isActive) {
