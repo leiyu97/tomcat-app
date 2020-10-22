@@ -1,6 +1,14 @@
 package com.larinia.client;
 
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+
 public class HelloWorld implements Runnable {
     static boolean isActive = true;
 
@@ -25,6 +33,28 @@ public class HelloWorld implements Runnable {
             }
             t.start();
         }
+
+        URL url = null;
+        try {
+            url = new URL("https://www.google.co.uk/");
+
+            URLConnection urlc = url.openConnection();
+
+            urlc.connect();
+
+            BufferedReader in = new BufferedReader(new InputStreamReader(
+                    urlc.getInputStream()));
+            String inputLine;
+            while ((inputLine = in.readLine()) != null)
+                System.out.println(inputLine);
+            in.close();
+
+            System.out.println("HelloWorld.main" +urlc.getContent().toString());
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     @Override
